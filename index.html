@@ -6,9 +6,9 @@
 <title>My Portfolio</title>
 <style>
 *{margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif;}
-body{background:#1c1c1c; color:white; scroll-behavior:smooth; overflow:hidden;} /* hide scroll on load */
+body{background:#1c1c1c; color:white; scroll-behavior:smooth; overflow:hidden;} 
 
-/* NAVBAR */
+
 nav{
     display:flex;
     justify-content:space-between;
@@ -23,11 +23,11 @@ nav h2{font-size:18px;}
 nav ul{list-style:none; display:flex; gap:25px;}
 nav ul button{cursor:pointer;}
 
-/* HERO SECTION */
+
 .hero{
     display:flex;
-    height:100vh; /* full viewport height */
-    overflow:hidden; /* prevent scroll inside hero */
+    height:100vh; 
+    overflow:hidden; 
 }
 .hero-img{flex:1;}
 .hero-img img{width:100%; height:100%; object-fit:cover;}
@@ -36,18 +36,18 @@ nav ul button{cursor:pointer;}
 .line{width:120px; height:2px; background:white; margin:20px 0;}
 .hero-content p{color:#ccc; max-width:400px; margin-bottom:30px;}
 
-/* BUTTONS */
+
 .buttons{display:flex; gap:15px;}
 .btn{padding:12px 25px; border:none; cursor:pointer; font-size:14px;}
 .btn-primary{background:white; color:black;}
 .btn-outline{background:transparent; color:white; border:1px solid white;}
 .btn:hover{opacity:0.8;}
 
-/* OTHER SECTIONS */
-.section{padding:80px; text-align:center; display:none;} /* Hidden initially */
+
+.section{padding:80px; text-align:center; display:none;} 
 .section p{max-width:600px; margin:20px auto; color:#ccc;}
 
-/* RESPONSIVE */
+
 @media(max-width:900px){
     .hero{flex-direction:column;}
     .hero-content{padding:40px;}
@@ -57,7 +57,7 @@ nav ul button{cursor:pointer;}
 </head>
 <body>
 
-<!-- NAVBAR -->
+
 <nav>
     <h2>Stephanie M. Omongos</h2>
     <ul>
@@ -68,7 +68,7 @@ nav ul button{cursor:pointer;}
     </ul>
 </nav>
 
-<!-- HOME -->
+
 <section class="hero" id="home">
     <div class="hero-img">
         <img id="heroSlide" src="profile.jpg" alt="Profile">
@@ -84,8 +84,8 @@ nav ul button{cursor:pointer;}
 </section>
 
 <script>
-// HERO SLIDESHOW
-const images = ["profile.jpg", "Luna.jpg"]; // add your image filenames here
+
+const images = ["profile.jpg", "Luna.jpg"]; 
 let current = 0;
 const heroSlide = document.getElementById("heroSlide");
 
@@ -95,12 +95,12 @@ function changeSlide() {
     heroSlide.src = images[current];
 }
 
-// Change slide every 3 seconds
+
 setInterval(changeSlide, 3000);
 </script>
 
 
-<!-- PHOTO -->
+
 <section class="section" id="photo" style="background:#222;">
     <h2>Photo</h2>
     <div class="line" style="margin:20px auto;"></div>
@@ -108,15 +108,15 @@ setInterval(changeSlide, 3000);
     <img src="Luna.jpg" style="max-width:300px; border-radius:10px;">
 </section>
 
-<!-- ABOUT ME -->
+
 <section class="section" id="about" style="background:#1f1f1f;">
     <div class="about-container" style="display:flex; flex-wrap:wrap; justify-content:space-between;">
-        <!-- RIGHT SIDE -->
+ 
         <div class="about-right" style="flex:1; min-width:300px; padding:20px;">
             <h2>About Me</h2>
             <p>I am a dedicated web designer with experience in Canva, Figma and Photoshop. I enjoy designing responsive websites.</p>
 
-            <!-- EDUCATION -->
+ 
             <h3 style="margin-top:40px;">Education</h3>
             <p>Manolo Fortich Central Elementary School<br>2011-2016</p>
             <p>Manolo Fortich National High School<br>2016-2020</p>
@@ -124,16 +124,16 @@ setInterval(changeSlide, 3000);
             <p>Bachelor of Science in Information Technology<br>Northern Bukidnon State College<br>2022-2026</p>
         </div>
 
-        <!-- LEFT SIDE -->
+
         <div class="about-left" style="flex:1; min-width:300px; padding:20px;">
-            <!-- EXPERIENCE -->
+        
             <h3>Experience</h3>
             <p>
                 Web designer <br>
                 Worked on web application projects emphasizing minimalist design principles, clean layouts, intuitive navigation, and a focus on core functionality to enhance user experience.
             </p>
 
-            <!-- PROJECTS -->
+         
             <h3 style="margin-top:40px;">Projects</h3>
             <p>
                 - Portfolio Website: Personal website showcasing skills and projects.<br>
@@ -145,7 +145,7 @@ setInterval(changeSlide, 3000);
 </section>
 
 
-<!-- CONTACT -->
+
 <section class="section" id="contact" style="background:#222;">
     <h2>Contact</h2>
     <div class="line" style="margin:20px auto;"></div>
@@ -154,25 +154,25 @@ setInterval(changeSlide, 3000);
     <p>Facebook: <a href="https://www.facebook.com/stephanie.omongos/"target="_blank" style="color:#ffd700;">https://www.facebook.com/stephanie.omongos/</a></p>
 </section>
 
-<!-- SCRIPT -->
+
 <script>
 function showSection(sectionId){
     const sections = document.querySelectorAll('.hero, .section');
 
-    sections.forEach(s => s.style.display='none'); // hide all
+    sections.forEach(s => s.style.display='none'); 
 
     const el = document.getElementById(sectionId);
     el.style.display = sectionId==='home' ? 'flex' : 'block';
 
     if(sectionId==='home'){
-        document.body.style.overflow='hidden'; // prevent scroll
+        document.body.style.overflow='hidden'; 
     } else {
-        document.body.style.overflow='auto'; // allow scroll for other sections
+        document.body.style.overflow='auto'; 
         el.scrollIntoView({behavior:'smooth'});
     }
 }
 
-// Initially show home
+
 showSection('home');
 </script>
 
